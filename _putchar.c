@@ -5,7 +5,7 @@
  * Desc: _putchar function
  * @a: char type
  * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * On error, return 0.
  */
 int _putchar(char a)
 {
