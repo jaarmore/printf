@@ -8,16 +8,10 @@
  */
 int _printf(const char *format, ...)
 {
-	op_t ops[] = {
-		{"c", op_c},
-		{"s", op_s},
-		{"%", op_mod},
-		{NULL, NULL}
-	};
-
+	op_t ops[] = {{"c", op_c}, {"s", op_s}, {"%", op_mod}, {NULL, NULL}};
 	va_list op_l;
 	unsigned int i = 0, j;
-	int cont = 0;
+	int cont = 0, bandera = 0;
 
 	if (format == NULL)
 		return (-1);
@@ -32,10 +26,14 @@ int _printf(const char *format, ...)
 				if (format[i + 1] == ops[j].op[0])
 				{
 					cont += ops[j].f(op_l);
+					bandera++;
 				}
 				j++;
 			}
-			i++;
+			if (bandera > 0)
+				i++;
+			else
+				_putchar(format[i]);
 		}
 		else
 		{
