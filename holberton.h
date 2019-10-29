@@ -15,7 +15,7 @@ typedef struct op
 	int (*f)(va_list);
 } op_t;
 
-int _putchar(char a)
+int _putchar(char a);
 int _printf(const char *format, ...);
 int op_c(va_list op_l);
 int op_s(va_list op_l);

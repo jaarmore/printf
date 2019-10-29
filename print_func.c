@@ -8,7 +8,8 @@
  */
 int op_c(va_list op_l)
 {
-
+	_putchar(va_arg(op_l, int));
+	return (1);
 }
 /**
  * op_s - Entry Point
@@ -18,7 +19,17 @@ int op_c(va_list op_l)
  */
 int op_s(va_list op_l)
 {
+	char *s = va_arg(op_l, char *);
 
+	int i = 0, cont = 0;
+
+	while (s != NULL && s[i] != '\0')
+	{
+		_putchar(s[i]);
+		i++;
+		cont++;
+	}
+	return (cont);
 }
 /**
  * op_mod - Entry Point
@@ -28,5 +39,9 @@ int op_s(va_list op_l)
  */
 int op_mod(va_list op_l)
 {
+	va_list strange;
 
+	va_copy(strange, op_l);
+	_putchar('%');
+	return (1);
 }
