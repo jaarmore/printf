@@ -21,6 +21,8 @@ int _printf(const char *format, ...)
 		j = 0;
 		if (format[i] == '%')
 		{
+			if (format[(i + 1)] == '\0')
+				break;
 			while (ops[j].op != NULL)
 			{
 				if (format[i + 1] == ops[j].op[0])
