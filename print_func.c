@@ -23,7 +23,12 @@ int op_s(va_list op_l)
 
 	int i = 0, cont = 0;
 
-	while (s != NULL && s[i] != '\0')
+	if (s == NULL)
+	{
+		s = "(null)";
+	}
+
+	while (s[i] != '\0')
 	{
 		_putchar(s[i]);
 		i++;
