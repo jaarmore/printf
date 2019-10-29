@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 /**
  * op_c - Entry Point
  * Desc: op_c function

@@ -15,14 +15,14 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 		return (-1);
+	if ((format[i] == '%') && (format[(i + 1)] == '\0'))
+		return (-1);
 	va_start(op_l, format);
 	while (format[i] != '\0')
 	{
 		j = 0;
 		if (format[i] == '%')
 		{
-			if (format[(i + 1)] == '\0')
-				return (-1);
 			while (ops[j].op != NULL)
 			{
 				if (format[i + 1] == ops[j].op[0])
