@@ -26,7 +26,7 @@ int _printf(const char *format, ...)
 			for (j = 0; ops[j].op != NULL; j++)
 			{
 				if (format[i + 1] == ops[j].op[0] &&
-				    ops[j].f != NULL)
+				    ops[j].f(op_l) != NULL)
 				{
 					cont += ops[j].f(op_l);
 					bandera++;
