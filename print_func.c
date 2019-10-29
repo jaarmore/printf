@@ -7,7 +7,8 @@
  */
 int op_c(va_list op_l)
 {
-	_putchar(va_arg(op_l, int));
+	char car = va_arg(op_l, int);
+	_putchar(car);
 	return (1);
 }
 /**
