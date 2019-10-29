@@ -42,11 +42,8 @@ int op_s(va_list op_l)
  * @op_l: va_list op_l
  * Return: %
  */
-int op_mod(va_list op_l)
+int op_mod(__attribute__((unused)) va_list op_l)
 {
-	va_list strange;
-
-	va_copy(strange, op_l);
 	_putchar('%');
 	return (1);
 }
