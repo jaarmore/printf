@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 	op_t ops[] = {{"c", op_c}, {"s", op_s}, {"%", op_mod}, {NULL, NULL}};
 	va_list op_l;
 	int i = 0, j;
-	int cont = 0, bandera = 0;
+	int cont = 0, bandera;
 
 	if (format == NULL)
 		return (-1);
@@ -20,6 +20,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
+			bandera = 0;
 			if (format[(i + 1)] == '\0')
 				return (-1);
 			for (j = 0; ops[j].op != NULL; j++)
