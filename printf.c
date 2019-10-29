@@ -8,10 +8,9 @@
  */
 int _printf(const char *format, ...)
 {
-	op_t ops[] = {{"c", op_c}, {"s", op_s}, {"%", op_mod}, {"\n", op_c},
-		      {NULL, NULL}};
+	op_t ops[] = {{"c", op_c}, {"s", op_s}, {"%", op_mod}, {NULL, NULL}};
 	va_list op_l;
-	unsigned int i = 0, j;
+	int i = 0, j;
 	int cont = 0, bandera = 0;
 
 	if (format == NULL)
@@ -19,19 +18,17 @@ int _printf(const char *format, ...)
 	va_start(op_l, format);
 	for (i = 0; format[i] != '\0'; i++)
 	{
-		j = 0;
 		if (format[i] == '%')
 		{
 			if (format[(i + 1)] == '\0')
 				return (-1);
-			while (ops[j].op != NULL)
+			for (j = 0; ops[j].op != NULL; j++)
 			{
 				if (format[i + 1] == ops[j].op[0])
 				{
 					cont += ops[j].f(op_l);
 					bandera++;
 				}
-				j++;
 			}
 			if (bandera > 0)
 				i++;
