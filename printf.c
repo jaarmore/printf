@@ -32,7 +32,10 @@ int _printf(const char *format, ...)
 			if (bandera > 0)
 				i++;
 			else
+			{
 				_putchar(format[i]);
+				cont++;
+			}
 		}
 		else
 		{
