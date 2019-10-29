@@ -21,17 +21,16 @@ int op_s(va_list op_l)
 {
 	char *s = va_arg(op_l, char *);
 
-	int i = 0, cont = 0;
+	int cont = 0;
 
 	if (s == NULL)
 	{
 		s = "(null)";
 	}
 
-	while (s[i] != '\0')
+	while (s[cont] != '\0')
 	{
-		_putchar(s[i]);
-		i++;
+		_putchar(s[cont]);
 		cont++;
 	}
 	return (cont);
