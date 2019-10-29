@@ -17,6 +17,7 @@ int _printf(const char *format, ...)
 
 	va_list op_l;
 	unsigned int i = 0, j;
+	int cont = 0;
 
 	va_start(op_l, format);
 
@@ -25,16 +26,24 @@ int _printf(const char *format, ...)
 	{
 		j = 0;
 		if (format[i] == '%')
+		{
 			while (ops[j].op != NULL)
 			{
-				if (format[i + 1] == op_s[j].op[0])
+				if (format[i + 1] == ops[j].op[0])
 				{
-					ops[j].f(op_l);
+					cont += ops[j].f(op_l);
 				}
 				j++;
 			}
+			i++;
+		}
+		else
+		{
+			_putchar(format[i]);
+			cont++;
+		}
 		i++;
 	}
 	va_end(op_l);
-
+	return (cont);
 }
