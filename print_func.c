@@ -54,7 +54,7 @@ int op_mod(__attribute__((unused)) va_list op_l)
 int op_d(va_list op_l)
 {
 	unsigned int g, f, c = 0, i = 0;
-	unsigned int b = 1;
+	unsigned long int b = 1;
 	int num = va_arg(op_l, int);
 
 	if (num == 0)
