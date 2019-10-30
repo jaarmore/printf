@@ -21,5 +21,5 @@ int _printf(const char *format, ...);
 int op_c(va_list op_l);
 int op_s(va_list op_l);
 int op_mod(va_list op_l);
-
+int op_d(va_list op_l);
 #endif /* HOLBERTON_H */

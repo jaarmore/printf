@@ -8,7 +8,8 @@
  */
 int _printf(const char *format, ...)
 {
-	op_t ops[] = {{"c", op_c}, {"s", op_s}, {"%", op_mod}, {NULL, NULL}};
+	op_t ops[] = {{"c", op_c}, {"s", op_s}, {"%", op_mod},
+		      {"d", op_d}, {"i", op_d}, {NULL, NULL}};
 	va_list op_l;
 	int i = 0, j;
 	int cont = 0, bandera;
