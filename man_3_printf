@@ -1,5 +1,5 @@
 .\" Printf manpage for Holberton School
-.TH _PRINTF 1 "29 October 2019" "version 1.0" "GNU" "HOLBERTON SCHOOL"
+.TH _PRINTF 1 "29 October 2019" "version 1.0" "HOLBERTON PRINTF PROYECT"
 .SH NAME
 printf
 .SH SYNOPSIS
