@@ -8,6 +8,16 @@ printf
 .B #include <stdio.h>
 .br
 .B int _printf(const char *format, ...);
+.SH FILES
+.B holberton.h
+.br
+.B _putchar.c
+.br
+.B print_func.c
+.br
+.B printf.c
+.br
+.B README.md
 .SH DESCRIPTION
 The function
 .B printf()
