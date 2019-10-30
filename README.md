@@ -107,3 +107,6 @@ Unknown:[%r]
 alex@ubuntu:~/c/printf$
 
     ```
+
+## (_printf) Flowchart
+![alt text](https://github.com/jaarmore/printf/blob/master/flow_printf.png)
