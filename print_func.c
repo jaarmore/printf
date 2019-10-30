@@ -45,3 +45,51 @@ int op_mod(__attribute__((unused)) va_list op_l)
 	_putchar('%');
 	return (1);
 }
+/**
+ * op_d - Entry Point
+ * Desc: op_d function that prints an decimal integer
+ * @op_l: va_list op_l
+ * Return: numbers of integer printed.
+ */
+int op_d(va_list op_l)
+{
+	unsigned int g, f, c = 0, i = 0;
+	unsigned int b = 1;
+	int num = va_arg(op_l, int);
+
+	if (num == 0)
+	{
+		_putchar(num + '0');
+		return (i + 1);
+	}
+	if (num < 0)
+	{
+		_putchar('-');
+		g = num * (-1);
+	}
+	else
+	{
+		g = num;
+	}
+
+	f = g;
+	while (g != 0)
+	{
+		g = g / 10;
+		b = b * 10;
+		c++;
+	}
+	b = b / 10;
+	i = c;
+	while (c != 0)
+	{
+		_putchar((f / b) + '0');
+		f = f % b;
+		b = b / 10;
+		c--;
+	}
+	if (num < 0)
+		i++;
+
+	return (i);
+}
